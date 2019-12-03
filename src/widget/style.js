@@ -4,7 +4,6 @@ export const desktopWrapperStyle = {
     bottom: '20px',
     right: '20px',
     zIndex: 2147483647,
-    borderRadius: '10px',
     background: 'rgb(229, 229, 229)',
     boxSizing: 'content-box',
     boxShadow: '0px 0px 30px rgba(0, 0, 0, 0.5)',

@@ -2,7 +2,6 @@ let path = require('path');
 let webpack = require('webpack');
 
 module.exports = {
-    devtool: 'source-map',
     entry: {
         widget: [
             path.join(__dirname, 'src', 'widget', 'widget-index.js')
@@ -17,21 +16,15 @@ module.exports = {
         publicPath: '/js/'
     },
     module: {
-        loaders: [
-            { test: /\.js$/, loaders: ['babel'], include: path.join(__dirname, 'src') },
-            { test: /\.css$/, loader: 'style!css!sass', include: path.join(__dirname, 'css') },
+        rules: [
+            { test: /\.js$/, loaders: ['babel-loader'], include: path.join(__dirname, 'src') },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] }
         ]
     },
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compressor: {
-                warnings: false
-            }
-        })
-    ]
+    devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      port: 3000,
+      hot: true
+    }
 };

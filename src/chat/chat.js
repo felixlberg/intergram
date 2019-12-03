@@ -3,6 +3,7 @@ import io from 'socket.io-client'
 
 import { h, Component } from 'preact';
 import MessageArea from './message-area';
+import css from './chat.css';
 
 export default class Chat extends Component {
 
@@ -41,9 +42,6 @@ export default class Chat extends Component {
                        ref={(input) => { this.input = input }}
                        onKeyPress={this.handleKeyPress}/>
 
-                <a class="banner" href="https://github.com/idoco/intergram" target="_blank">
-                    Powered by <b>Intergram</b>&nbsp;
-                </a>
             </div>
         );
     }
