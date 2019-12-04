@@ -1,6 +1,6 @@
 {
   "name": "intergram",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A live chat widget linked to your telegram messenger",
   "engines": {
     "node": "6.9.1",
@@ -15,7 +15,7 @@
     "lint": "eslint src"
   },
   "authors": [
-    "Ido Cohen (http://github.com/idoco)"
+    "Felix Lberg (http://github.com/felixlberg)"
   ],
   "devDependencies": {
     "babel-core": "^6.26.3",
